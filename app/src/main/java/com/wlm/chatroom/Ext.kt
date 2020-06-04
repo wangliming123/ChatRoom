@@ -10,8 +10,8 @@ suspend fun<T> executeResponse(
     errorBlock: suspend CoroutineScope.(String?) -> Unit
 ) {
     coroutineScope {
-        if (response.errorCode == -1) errorBlock(response.errorMsg)
-        else successBlock()
+        if (response.errorCode == 0) successBlock()
+        else errorBlock(response.errorMsg)
     }
 }
 

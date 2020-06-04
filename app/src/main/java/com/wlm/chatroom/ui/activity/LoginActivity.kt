@@ -4,11 +4,12 @@ import android.view.View
 import androidx.lifecycle.Observer
 import com.orhanobut.logger.Logger
 import com.wlm.chatroom.R
-import com.wlm.chatroom.ViewModel.LoginViewModel
+import com.wlm.chatroom.viewModel.LoginViewModel
 import com.wlm.chatroom.base.ui.BaseVMActivity
 import com.wlm.chatroom.common.Constant
 import com.wlm.chatroom.common.utils.SharedPrefs
 import com.wlm.chatroom.common.utils.ToastUtils
+import com.wlm.chatroom.startKtxActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
@@ -73,6 +74,7 @@ class LoginActivity : BaseVMActivity<LoginViewModel>() {
                 state.success?.let {
                     isLogin = true
                     userString = it
+                    startKtxActivity<MainActivity>()
                     finish()
                 }
             })

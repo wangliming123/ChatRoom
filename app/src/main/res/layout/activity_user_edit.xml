@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.UserEditActivity">
+
+    <include layout="@layout/layout_header"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:paddingStart="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp60"
+            android:layout_gravity="center_vertical"
+            android:text="@string/str_nick_name"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/textColorSecondary"/>
+
+        <EditText
+            android:id="@+id/user_edit_nickname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp10"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:maxLines="1"
+            android:autofillHints="@string/str_nick_name"
+            android:hint="@string/str_nick_name"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:paddingStart="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp60"
+            android:layout_gravity="center_vertical"
+            android:text="@string/str_email"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/textColorSecondary"/>
+
+        <EditText
+            android:id="@+id/user_edit_e_mail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp10"
+            android:layout_weight="1"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:autofillHints="@string/str_email"
+            android:hint="@string/str_email"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:paddingStart="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp60"
+            android:layout_gravity="center_vertical"
+            android:text="@string/str_mobile"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/textColorSecondary"/>
+
+        <EditText
+            android:id="@+id/user_edit_mobile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp10"
+            android:layout_weight="1"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:autofillHints="@string/str_mobile"
+            android:hint="@string/str_mobile"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/ckb_change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp40"
+        android:text="@string/str_change_password"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/dp20"
+        android:checked="false"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/tab_edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:paddingStart="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp60"
+            android:layout_gravity="center_vertical"
+            android:text="@string/str_password"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/textColorSecondary"/>
+
+        <EditText
+            android:id="@+id/user_edit_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp10"
+            android:layout_weight="1"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:autofillHints="@string/str_password"
+            android:hint="@string/str_password"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_edit_user"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginStart="@dimen/dp40"
+        android:layout_marginEnd="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp30"
+        android:background="@drawable/shape_login_button"
+        android:text="@string/str_save"
+        android:textSize="@dimen/sp18"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>

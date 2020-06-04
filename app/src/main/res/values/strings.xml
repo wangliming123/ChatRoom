@@ -8,4 +8,20 @@
     <string name="str_register">注  册</string>
     <string name="str_username_invalid">用户名最少3位</string>
     <string name="str_password_invalid">密码最少6位</string>
+
+    <string name="str_message">消息</string>
+    <string name="str_contact">好友</string>
+    <string name="str_mine">我的</string>
+    <string name="str_user_name">用户名</string>
+    <string name="str_nick_name">昵称</string>
+    <string name="str_email">邮箱</string>
+    <string name="str_about">关于</string>
+    <string name="str_logout">退出登录</string>
+
+    <string name="str_source_code" formatted="true">源码地址:\n%s</string>
+    <string name="str_save">保存</string>
+    <string name="str_confirm">确定</string>
+    <string name="str_exit_hint">再按一次退出</string>
+    <string name="str_mobile">手机号</string>
+    <string name="str_change_password">修改密码</string>
 </resources>

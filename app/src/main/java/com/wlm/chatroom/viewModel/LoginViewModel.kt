@@ -1,7 +1,8 @@
-package com.wlm.chatroom.ViewModel
+package com.wlm.chatroom.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.orhanobut.logger.Logger
 import com.wlm.chatroom.base.UiState
 import com.wlm.chatroom.base.BaseViewModel
 import com.wlm.chatroom.executeResponse
@@ -18,12 +19,14 @@ class LoginViewModel : BaseViewModel() {
             tryCatch(
                 tryBlock = {
                     val result = repository.login(username, password)
+                    Logger.d(result)
                     executeResponse(result, {
                         result.data?.let {
-                            uiState.value = UiState(false, null, "$username,$password")
+
+                            uiState.value = UiState(false, null, "$username,$password,${it.id},${it.nickname},${it.email},${it.mobile}")
                         }
                     }, {
-                        uiState.value = UiState(false, "登录失败", null)
+                        uiState.value = UiState(false, "登录失败,$it", null)
                     })
                 },
                 catchBlock = {
@@ -47,7 +50,7 @@ class LoginViewModel : BaseViewModel() {
                             repository.login(username, password)
                         }
                     }, {
-                        uiState.value = UiState(false, "注册失败", null)
+                        uiState.value = UiState(false, "注册失败，$it", null)
                     })
                 },
                 catchBlock = {

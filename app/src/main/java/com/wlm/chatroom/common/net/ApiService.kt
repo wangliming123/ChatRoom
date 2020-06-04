@@ -1,5 +1,6 @@
 package com.wlm.chatroom.common.net
 
+import com.wlm.chatroom.common.LoginResult
 import com.wlm.chatroom.common.net.HttpResponse
 import retrofit2.http.*
 
@@ -8,7 +9,7 @@ interface ApiService {
 
     companion object {
 //        const val BASE_URL = "https://www.wanandroid.com/"
-        const val BASE_URL = "http://31k36q5514.wicp.vip/"
+        const val BASE_URL = "http://175.24.41.128:8080/"
 //        const val TOOL_URL = "http://www.wanandroid.com/tools"
     }
 
@@ -17,25 +18,23 @@ interface ApiService {
     suspend fun login(
         @Field("username") username: String,
         @Field("password") password: String
-    ): HttpResponse<Any>
-
-//    @FormUrlEncoded
-//    @POST("user/login")
-//    suspend fun login(
-//        @Body map : Map<String, String>
-//    ): HttpResponse<Any>
+    ): HttpResponse<LoginResult>
 
     @FormUrlEncoded
     @POST("user/register")
     suspend fun register(
         @Field("username") username: String,
         @Field("password") password: String,
-        @Field("repassword") rePassword: String
+        @Field("rePassword") rePassword: String
     ): HttpResponse<Any>
 
 
     @GET("user/logout/json")
     suspend fun logout(): HttpResponse<Any>
+
+    @FormUrlEncoded
+    @POST("user/edit")
+    suspend fun editUser(@FieldMap editMap: Map<String, String>): HttpResponse<Any>
 
 
 //    ///page 页码，从1开始
