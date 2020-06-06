@@ -1,6 +1,8 @@
 package com.wlm.chatroom.ui.activity
 
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -12,6 +14,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.wlm.chatroom.MyApp
 import com.wlm.chatroom.R
 import com.wlm.chatroom.base.ui.BaseVMActivity
 import com.wlm.chatroom.common.Constant
@@ -19,12 +22,11 @@ import com.wlm.chatroom.common.utils.SharedPrefs
 import com.wlm.chatroom.common.utils.ToastUtils
 import com.wlm.chatroom.startKtxActivity
 import com.wlm.chatroom.ui.fragment.ContactFragment
-import com.wlm.chatroom.ui.fragment.MessageFragment
+import com.wlm.chatroom.ui.fragment.DiscussFragment
 import com.wlm.chatroom.ui.fragment.MineFragment
 import com.wlm.chatroom.viewModel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
-import kotlinx.android.synthetic.main.nav_header.*
 
 class MainActivity : BaseVMActivity<MainViewModel>() {
     override val layoutId: Int = R.layout.activity_main
@@ -39,7 +41,7 @@ class MainActivity : BaseVMActivity<MainViewModel>() {
     )
 
     private val fragmentList = arrayListOf<Fragment>()
-    private val messageFragment by lazy { MessageFragment() }
+    private val messageFragment by lazy { DiscussFragment() }
     private val contactFragment by lazy { ContactFragment() }
     private val mineFragment by lazy { MineFragment() }
 
@@ -52,6 +54,10 @@ class MainActivity : BaseVMActivity<MainViewModel>() {
 
     override fun init() {
         super.init()
+        if (isLogin) {
+            val userInfo = userString.split(",")
+            MyApp.instance.currentUserId = userInfo[2]
+        }
         setSupportActionBar(toolbar)
         initDrawerLayout()
         initNav()
@@ -72,7 +78,6 @@ class MainActivity : BaseVMActivity<MainViewModel>() {
                     super.onDrawerOpened(drawerView)
 //                    nav_view.menu.findItem(R.id.logout).isVisible = isLogin
                     val userInfo = userString.split(",")
-
                     nav_view.findViewById<TextView>(R.id.tv_user_name).text = userInfo[0]
                     nav_view.findViewById<TextView>(R.id.tv_nick_name).text = userInfo[3]
                     nav_view.findViewById<TextView>(R.id.tv_email).text = userInfo[4]
@@ -147,8 +152,7 @@ class MainActivity : BaseVMActivity<MainViewModel>() {
                 override fun onPageSelected(position: Int) {
                     bottom_navigation.selectedItemId =
                         bottom_navigation.menu.getItem(position).itemId
-                    toolbar.title =
-                        getString(if (position == 0) R.string.app_name else bottomTitles[position])
+                    toolbar.title = getString(bottomTitles[position])
                 }
 
             })
@@ -173,23 +177,23 @@ class MainActivity : BaseVMActivity<MainViewModel>() {
 
 
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu_main, menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.navigation -> {
-//                startKtxActivity<NavigationActivity>()
-//            }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.discuss_add -> {
+                startKtxActivity<AddDiscussActivity>()
+            }
 //            R.id.search -> {
 //                startKtxActivity<SearchActivity>()
 //                return true
 //            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     private var lastExitTime = 0L
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {

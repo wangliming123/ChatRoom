@@ -4,11 +4,11 @@ import com.wlm.chatroom.R
 import com.wlm.chatroom.base.ui.BaseVMFragment
 import com.wlm.chatroom.common.Constant
 import com.wlm.chatroom.common.utils.SharedPrefs
-import com.wlm.chatroom.viewModel.MessageViewModel
+import com.wlm.chatroom.viewModel.DiscussViewModel
 
-class MineFragment : BaseVMFragment<MessageViewModel>() {
+class MineFragment : BaseVMFragment<DiscussViewModel>() {
     override val layoutId = R.layout.fragment_mine
-    override val providerVMClass = MessageViewModel::class.java
+    override val providerVMClass = DiscussViewModel::class.java
 
     private var isLogin by SharedPrefs(Constant.IS_LOGIN, false)
 

@@ -1,6 +1,7 @@
 package com.wlm.chatroom.ui.activity
 
 import android.view.View
+import android.widget.CompoundButton
 import androidx.lifecycle.Observer
 import com.wlm.chatroom.R
 import com.wlm.chatroom.base.ui.BaseVMActivity
@@ -31,7 +32,7 @@ class UserEditActivity : BaseVMActivity<UserEditViewModel>() {
         user_edit_nickname.setText(userInfo[3])
         user_edit_e_mail.setText(userInfo[4])
         user_edit_mobile.setText(userInfo[5])
-        user_edit_password.setText(userInfo[1])
+//        user_edit_password.setText(userInfo[1])
 
         btn_edit_user.setOnClickListener {
 
@@ -46,6 +47,10 @@ class UserEditActivity : BaseVMActivity<UserEditViewModel>() {
             }
             mViewModel.editUser(editMap)
 
+        }
+
+        ckb_change_password.setOnCheckedChangeListener { buttonView, isChecked ->
+            tab_edit_password.visibility = if (isChecked) View.VISIBLE else View.GONE
         }
     }
 

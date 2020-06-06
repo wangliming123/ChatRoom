@@ -6,12 +6,12 @@ import com.wlm.chatroom.base.BaseViewModel
 import com.wlm.chatroom.common.Constant
 import com.wlm.chatroom.common.utils.SharedPrefs
 import com.wlm.chatroom.executeResponse
-import com.wlm.chatroom.repository.LoginRepository
+import com.wlm.chatroom.repository.UserRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel : BaseViewModel() {
 
-    private val loginRepository by lazy { LoginRepository() }
+    private val loginRepository by lazy { UserRepository() }
     private var isLogin by SharedPrefs(Constant.IS_LOGIN, false)
 
     val loginState = MutableLiveData<Boolean>()

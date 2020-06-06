@@ -51,7 +51,7 @@ class LoginActivity : BaseVMActivity<LoginViewModel>() {
             tv_tips.text = getString(R.string.str_username_invalid)
             return false
         }
-        if (et_password.text.toString().length < 6) {
+        if (et_password.text.toString().length < 3) {
             tv_tips.visibility = View.VISIBLE
             tv_tips.text = getString(R.string.str_password_invalid)
             return false

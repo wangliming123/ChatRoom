@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="@dimen/dp5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_discuss_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="@dimen/dp3"
+            tools:text="@string/app_name"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+
+        <TextView
+            android:id="@+id/tv_discuss_latest_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/dp3"
+            tools:text="@string/app_name"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/sp12" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_latest_discuss_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp3"
+        tools:text="@string/app_name"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/sp14" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:background="@color/divider"/>
+
+
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.AddDiscussActivity">
+
+    <include layout="@layout/layout_header"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:paddingStart="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp100"
+            android:layout_gravity="center_vertical"
+            android:text="@string/str_discuss_title"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/textColorSecondary"/>
+
+        <EditText
+            android:id="@+id/et_discuss_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp10"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="16"
+            android:autofillHints="@string/str_discuss_title"
+            android:hint="@string/str_discuss_title"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:paddingStart="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp100"
+            android:layout_gravity="center_vertical"
+            android:text="@string/str_visible_type"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/textColorSecondary"/>
+
+        <Spinner
+            android:id="@+id/sp_discuss_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginEnd="@dimen/dp10"
+            android:entries="@array/discuss_visible_type"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_add_discuss"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginStart="@dimen/dp40"
+        android:layout_marginEnd="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp30"
+        android:background="@drawable/shape_login_button"
+        android:text="@string/str_save"
+        android:textSize="@dimen/sp18"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_add_discuss_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp10"
+        android:paddingStart="@dimen/dp40"
+        android:paddingEnd="@dimen/dp20"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/color_top"/>
+
+</LinearLayout>

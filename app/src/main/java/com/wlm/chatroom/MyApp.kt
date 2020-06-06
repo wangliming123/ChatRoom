@@ -14,9 +14,11 @@ class MyApp : MultiDexApplication() {
 
     companion object {
         const val TAG = "logger_tag"
-        lateinit var instance: Application
+        lateinit var instance: MyApp
             private set
     }
+
+    lateinit var currentUserId : String
 
     override fun onCreate() {
         super.onCreate()

@@ -1,5 +1,7 @@
 package com.wlm.chatroom.common.net
 
+import com.wlm.chatroom.MyApp
+import com.wlm.chatroom.common.Discuss
 import com.wlm.chatroom.common.LoginResult
 import com.wlm.chatroom.common.net.HttpResponse
 import retrofit2.http.*
@@ -36,6 +38,20 @@ interface ApiService {
     @POST("user/edit")
     suspend fun editUser(@FieldMap editMap: Map<String, String>): HttpResponse<Any>
 
+    @FormUrlEncoded
+    @POST("discuss/list")
+    suspend fun getDiscussList(
+        @Field("userId") userId: String = MyApp.instance.currentUserId
+    ): HttpResponse<List<Discuss>>
+
+
+    @FormUrlEncoded
+    @POST("discuss/add")
+    suspend fun addDiscuss(
+        @Field("discussTitle") discussTitle: String,
+        @Field("userId") userId: String = MyApp.instance.currentUserId,
+        @Field("visibleType") visibleType: Int
+    ): HttpResponse<Any>
 
 //    ///page 页码，从1开始
 //    @GET("article/list/{page}/json")

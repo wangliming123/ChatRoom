@@ -7,7 +7,7 @@
     <string name="str_login">登  录</string>
     <string name="str_register">注  册</string>
     <string name="str_username_invalid">用户名最少3位</string>
-    <string name="str_password_invalid">密码最少6位</string>
+    <string name="str_password_invalid">密码最少3位</string>
 
     <string name="str_message">消息</string>
     <string name="str_contact">好友</string>
@@ -24,4 +24,12 @@
     <string name="str_exit_hint">再按一次退出</string>
     <string name="str_mobile">手机号</string>
     <string name="str_change_password">修改密码</string>
+    <string name="str_add_discuss">新增聊天室</string>
+
+
+
+    <string name="no_data">暂无数据 o(╥﹏╥)o \n 点击屏幕重新加载</string>
+    <string name="error_loading">加载失败 o(╥﹏╥)o \n 点击屏幕重新加载</string>
+    <string name="str_discuss_title">聊天室名称</string>
+    <string name="str_visible_type">加入方式</string>
 </resources>

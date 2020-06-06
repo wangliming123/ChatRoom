@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="discuss_visible_type">
+        <item>自由加入</item>
+        <item>邀请加入</item>
+    </string-array>
+</resources>

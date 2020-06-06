@@ -4,13 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.wlm.chatroom.base.BaseViewModel
 import com.wlm.chatroom.executeResponse
-import com.wlm.chatroom.repository.LoginRepository
+import com.wlm.chatroom.repository.UserRepository
 import kotlinx.coroutines.launch
 
 class UserEditViewModel : BaseViewModel() {
 
 
-    private val loginRepository by lazy { LoginRepository() }
+    private val loginRepository by lazy { UserRepository() }
 
 
     val editState = MutableLiveData<Boolean>()

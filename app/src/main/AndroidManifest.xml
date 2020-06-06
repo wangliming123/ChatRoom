@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.UserEditActivity"></activity>
-        <activity android:name=".ui.activity.LoginActivity"></activity>
+        <activity android:name=".ui.activity.DiscussMessageActivity"></activity>
+        <activity android:name=".ui.activity.AddDiscussActivity" />
+        <activity android:name=".ui.activity.UserEditActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

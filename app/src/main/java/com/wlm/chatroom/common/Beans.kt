@@ -11,3 +11,14 @@ data class LoginResult(
     val rePassword: String,
     val userName: String
 )
+
+data class Discuss(
+    val createTime: String,
+    val discussId: Int,
+    val discussTitle: String,
+    val modifyId: String,
+    val modifyTime: String,
+    val status: String,
+    val userId: String,
+    val visibleType: String
+)

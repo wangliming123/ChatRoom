@@ -7,7 +7,7 @@ import com.wlm.chatroom.common.net.RetrofitManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class LoginRepository : BaseRepository(){
+class UserRepository : BaseRepository(){
 
     suspend fun login(username: String, password: String): HttpResponse<LoginResult> {
         return withContext(Dispatchers.Default) {
