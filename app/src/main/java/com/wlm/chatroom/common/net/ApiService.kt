@@ -1,8 +1,7 @@
 package com.wlm.chatroom.common.net
 
 import com.wlm.chatroom.MyApp
-import com.wlm.chatroom.common.Discuss
-import com.wlm.chatroom.common.LoginResult
+import com.wlm.chatroom.common.*
 import com.wlm.chatroom.common.net.HttpResponse
 import retrofit2.http.*
 
@@ -14,6 +13,9 @@ interface ApiService {
         const val BASE_URL = "http://175.24.41.128:8080/"
 //        const val TOOL_URL = "http://www.wanandroid.com/tools"
     }
+
+    @POST("user/list")
+    suspend fun userList(): HttpResponse<List<User>>
 
     @FormUrlEncoded
     @POST("user/login")
@@ -53,6 +55,35 @@ interface ApiService {
         @Field("visibleType") visibleType: Int
     ): HttpResponse<Any>
 
+
+    @FormUrlEncoded
+    @POST("discussMsg/add")
+    suspend fun sendMsg(
+        @Field("userId") userId: String = MyApp.instance.currentUserId,
+        @Field("discussId") discussId: Int,
+        @Field("msgContent") msgContent: String
+    ): HttpResponse<Any>
+
+    @FormUrlEncoded
+    @POST("discussMsg/list")
+    suspend fun getMsgList(
+        @Field("discussId") discussId: Int
+    ): HttpResponse<List<Message>>
+
+
+    @Multipart
+    @POST("discussMan/add")
+    suspend fun addDiscussMan(
+        @Part("discussId") discussId: Int,
+        @Part("userId") userId: String
+    ): HttpResponse<Any>
+
+
+    @FormUrlEncoded
+    @POST("discussMan/list")
+    suspend fun getManList(
+        @Field("discussId") discussId: Int
+    ): HttpResponse<DiscussMan>
 //    ///page 页码，从1开始
 //    @GET("article/list/{page}/json")
 //    suspend fun getArticles(@Path("page") page: Int): HttpResponse<ArticleList>

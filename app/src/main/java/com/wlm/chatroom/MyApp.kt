@@ -1,9 +1,7 @@
 package com.wlm.chatroom
 
 import android.app.Activity
-import android.app.Application
 import android.os.Bundle
-import androidx.multidex.BuildConfig
 import androidx.multidex.MultiDexApplication
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger

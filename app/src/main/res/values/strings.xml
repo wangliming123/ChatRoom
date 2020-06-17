@@ -11,6 +11,7 @@
 
     <string name="str_message">消息</string>
     <string name="str_contact">好友</string>
+    <string name="str_discuss">聊天室</string>
     <string name="str_mine">我的</string>
     <string name="str_user_name">用户名</string>
     <string name="str_nick_name">昵称</string>
@@ -25,11 +26,14 @@
     <string name="str_mobile">手机号</string>
     <string name="str_change_password">修改密码</string>
     <string name="str_add_discuss">新增聊天室</string>
+    <string name="str_add_discuss_man">新增聊天室成员</string>
+    <string name="str_delete_discuss_man">删除聊天室成员</string>
 
-
+    <string name="str_edit_user">编辑用户</string>
 
     <string name="no_data">暂无数据 o(╥﹏╥)o \n 点击屏幕重新加载</string>
     <string name="error_loading">加载失败 o(╥﹏╥)o \n 点击屏幕重新加载</string>
     <string name="str_discuss_title">聊天室名称</string>
     <string name="str_visible_type">加入方式</string>
+    <string name="str_send">发送</string>
 </resources>

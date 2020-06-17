@@ -2,6 +2,7 @@ package com.wlm.chatroom.repository
 
 import com.wlm.chatroom.base.BaseRepository
 import com.wlm.chatroom.common.LoginResult
+import com.wlm.chatroom.common.User
 import com.wlm.chatroom.common.net.HttpResponse
 import com.wlm.chatroom.common.net.RetrofitManager
 import kotlinx.coroutines.Dispatchers
@@ -30,6 +31,12 @@ class UserRepository : BaseRepository(){
     suspend fun editUser(editMap: Map<String, String>): HttpResponse<Any> {
         return withContext(Dispatchers.Default) {
             RetrofitManager.service.editUser(editMap)
+        }
+    }
+
+    suspend fun userList(): HttpResponse<List<User>> {
+        return withContext(Dispatchers.Default) {
+            RetrofitManager.service.userList()
         }
     }
 }

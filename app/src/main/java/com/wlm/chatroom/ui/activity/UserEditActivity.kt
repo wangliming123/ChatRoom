@@ -22,7 +22,7 @@ class UserEditActivity : BaseVMActivity<UserEditViewModel>() {
 
     override fun init() {
         super.init()
-        headerToolbar.title = getString(R.string.app_name)
+        headerToolbar.title = getString(R.string.str_edit_user)
         headerToolbar.setNavigationIcon(R.drawable.arrow_back)
         headerToolbar.setNavigationOnClickListener { finish() }
         bindView()
@@ -49,7 +49,7 @@ class UserEditActivity : BaseVMActivity<UserEditViewModel>() {
 
         }
 
-        ckb_change_password.setOnCheckedChangeListener { buttonView, isChecked ->
+        ckb_change_password.setOnCheckedChangeListener { _, isChecked ->
             tab_edit_password.visibility = if (isChecked) View.VISIBLE else View.GONE
         }
     }

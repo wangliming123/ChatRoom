@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item-->
+<!--        android:id="@+id/discuss_man_delete"-->
+<!--        android:icon="@drawable/btn_delete"-->
+<!--        android:title="@string/str_delete_discuss_man"-->
+<!--        app:showAsAction="ifRoom|collapseActionView"/>-->
+    <item
+        android:id="@+id/discuss_man_add"
+        android:icon="@drawable/btn_add"
+        android:title="@string/str_add_discuss_man"
+        app:showAsAction="ifRoom|collapseActionView"/>
+</menu>

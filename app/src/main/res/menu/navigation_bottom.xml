@@ -5,8 +5,8 @@
         android:icon="@drawable/ic_we_chat"/>
 
     <item android:id="@+id/contact"
-        android:title="@string/str_contact"
-        android:icon="@drawable/ic_square"/>
+        android:title="@string/str_discuss"
+        android:icon="@drawable/ic_home"/>
 
     <item android:id="@+id/mine"
         android:title="@string/str_mine"

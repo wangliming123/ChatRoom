@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp10"
+    android:layout_marginEnd="@dimen/dp30"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:id="@+id/tab_left_msg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_marginStart="@dimen/dp10">
+
+        <ImageView
+            android:id="@+id/iv_left_head"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_head_img"/>
+
+        <TextView
+            android:id="@+id/tv_left_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/str_nick_name"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/dp10"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/sp12"
+            android:layout_toEndOf="@id/iv_left_head"/>
+
+        <TextView
+            android:id="@+id/tv_left_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dp35"
+            android:layout_marginEnd="@dimen/dp50"
+            android:layout_below="@id/tv_left_nick_name"
+            android:layout_toEndOf="@id/iv_left_head"
+            android:layout_marginTop="@dimen/dp5"
+            android:paddingTop="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5"
+            tools:text="@string/str_message"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp18"
+            android:background="@mipmap/bg_message_left"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tab_right_msg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp10">
+
+        <ImageView
+            android:id="@+id/iv_right_head"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_head_img"/>
+
+        <TextView
+            android:id="@+id/tv_right_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/str_nick_name"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/dp10"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/sp12"
+            android:layout_toStartOf="@id/iv_right_head"/>
+
+        <TextView
+            android:id="@+id/tv_right_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dp35"
+            android:layout_below="@id/tv_right_nick_name"
+            android:layout_toStartOf="@id/iv_right_head"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginStart="@dimen/dp50"
+            android:paddingTop="@dimen/dp3"
+            android:paddingBottom="@dimen/dp3"
+            tools:text="@string/str_message"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp18"
+            android:background="@mipmap/bg_message_right"/>
+    </RelativeLayout>
+
+</LinearLayout>

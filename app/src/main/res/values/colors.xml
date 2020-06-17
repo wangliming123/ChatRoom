@@ -22,5 +22,7 @@
     <color name="divider">#e2e2e2</color>
     <color name="dark_grey">#a7a7a7</color>
 
+    <color name="msg_bg">#ddbbe6ec</color>
+
 
 </resources>

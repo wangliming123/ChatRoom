@@ -8,7 +8,7 @@ import com.wlm.chatroom.R
 import com.wlm.chatroom.base.ui.BaseVMFragment
 import com.wlm.chatroom.common.Constant
 import com.wlm.chatroom.common.utils.SharedPrefs
-import com.wlm.chatroom.ui.adapter.MessageAdapter
+import com.wlm.chatroom.ui.adapter.DiscussAdapter
 import com.wlm.chatroom.viewModel.DiscussViewModel
 import kotlinx.android.synthetic.main.refresh_layout.*
 
@@ -20,7 +20,7 @@ class DiscussFragment : BaseVMFragment<DiscussViewModel>() {
 
     private var isLogin by SharedPrefs(Constant.IS_LOGIN, false)
 
-    private val adapter by lazy { MessageAdapter() }
+    private val adapter by lazy { DiscussAdapter() }
 
 
     override fun init() {
