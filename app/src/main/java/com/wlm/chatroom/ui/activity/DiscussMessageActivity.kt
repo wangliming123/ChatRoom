@@ -46,12 +46,10 @@ class DiscussMessageActivity : BaseVMActivity<MessageViewModel>() {
         headerToolbar.title = intent!!.extras!!.getString(KEY_DISCUSS_TITLE)
         headerToolbar.setNavigationIcon(R.drawable.arrow_back)
         headerToolbar.setNavigationOnClickListener {
-            when(mViewModel.uiState) {
+            when(mViewModel.uiState.value) {
                 1 -> finish()
                 else -> {
-                    tab_message.visibility = View.VISIBLE
-                    rv_user.visibility = View.GONE
-                    rv_discuss_man.visibility = View.GONE
+                    mViewModel.uiState.value = 1
                 }
             }
         }
